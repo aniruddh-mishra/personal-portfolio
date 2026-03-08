@@ -2,7 +2,6 @@
   "name": "Aniruddh Mishra",
   "email": "aniruddh@utexas.edu",
   "location": "Austin, Texas",
-  "tagline": "ECE Engineer × Researcher × Builder",
   "label": "Electrical & Computer Engineering",
   "subtitle": "ECE Engineer × Researcher × Builder",
   "cyclingTaglines": [
@@ -39,6 +38,32 @@
     "Victor L. Hand Endowed Scholar (2024)",
     "Congressional App Challenge — 2nd Place (2022)"
   ],
+  "photos": {
+    "hero": "/profile_photo.jpg",
+    "gallery": [
+      {
+        "src": "/half_marathon.heic",
+        "alt": "Austin Half Marathon"
+      },
+      {
+        "src": "/san_francisco.heic",
+        "alt": "San Francisco"
+      },
+      {
+        "src": "/running.heic",
+        "alt": "Running in San Francisco"
+      },
+      {
+        "src": "/football_game.jpg",
+        "alt": "UT football game"
+      }
+    ]
+  },
+  "resume": {
+    "label": "Download Resume",
+    "url": "https://files.urjith.dev/s/xX9Em4s6LDtrNXS",
+    "fileName": "Aniruddh_Mishra_Resume.pdf"
+  },
   "social": {
     "linkedin": "https://linkedin.com/in/aniruddhmishra",
     "github": "https://github.com/aniruddh-mishra",

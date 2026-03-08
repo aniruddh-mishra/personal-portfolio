@@ -3,7 +3,7 @@
     "date": "Spring 2026",
     "title": "Physical Design Intern",
     "company": "Apple",
-    "description": "Designing automation flows for Static Timing Analysis (STA) infrastructure. Contributing to the tooling and methodology that ensures timing closure on Apple silicon — the same pipeline behind chips like the M-series and A-series."
+    "bullets": ["Designing automation flows for Static Timing Analysis (STA) infrastructure.", "Contributing to the tooling and methodology that ensures timing closure on Apple silicon."]
   },
   {
     "date": "June 2025 – August 2025",
@@ -15,12 +15,6 @@
       "Optimized lamp interference simulations using cross-correlation algorithms",
       "Developed a PCB daughter board in Altium for programming and debugging light sources"
     ]
-  },
-  {
-    "date": "Sept 2025 – Present",
-    "title": "Lab Assistant",
-    "company": "Quantum & Nonlinear Optoelectronics Group · UT Austin",
-    "description": "Designing a photothermal interferometry experiment to analyze long-wave infrared absorption of germanium."
   },
   {
     "date": "June 2024 – May 2025",

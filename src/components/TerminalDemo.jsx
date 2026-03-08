@@ -1,4 +1,5 @@
 import { useState, useEffect, useRef } from 'react'
+import { createPortal } from 'react-dom'
 
 function TerminalDemo({ projectId, script, title }) {
   const [isOpen, setIsOpen] = useState(false)
@@ -20,6 +21,25 @@ function TerminalDemo({ projectId, script, title }) {
       outputRef.current.scrollTop = outputRef.current.scrollHeight
     }
   }, [output])
+
+  useEffect(() => {
+    if (!isOpen) return
+
+    const handleEscape = (event) => {
+      if (event.key === 'Escape') {
+        closeTerminal()
+      }
+    }
+
+    const originalOverflow = document.body.style.overflow
+    document.body.style.overflow = 'hidden'
+    window.addEventListener('keydown', handleEscape)
+
+    return () => {
+      document.body.style.overflow = originalOverflow
+      window.removeEventListener('keydown', handleEscape)
+    }
+  }, [isOpen])
 
   const runAnimation = () => {
     if (isRunning) return
@@ -43,16 +63,24 @@ function TerminalDemo({ projectId, script, title }) {
     })
   }
 
+  const closeTerminal = () => {
+    setIsOpen(false)
+    setOutput([])
+    timeoutsRef.current.forEach(timeout => clearTimeout(timeout))
+    timeoutsRef.current = []
+    setIsRunning(false)
+  }
+
+  const openTerminal = () => {
+    setIsOpen(true)
+    setTimeout(runAnimation, 100)
+  }
+
   const handleToggle = () => {
     if (!isOpen) {
-      setIsOpen(true)
-      setTimeout(runAnimation, 100)
+      openTerminal()
     } else {
-      setIsOpen(false)
-      setOutput([])
-      timeoutsRef.current.forEach(timeout => clearTimeout(timeout))
-      timeoutsRef.current = []
-      setIsRunning(false)
+      closeTerminal()
     }
   }
 
@@ -66,27 +94,35 @@ function TerminalDemo({ projectId, script, title }) {
         {isOpen ? 'Close' : 'Run Demo'}
       </button>
       
-      {isOpen && (
-        <div className="terminal-container">
-          <div className="terminal-header">
-            <div className="terminal-buttons">
-              <span className="terminal-btn red"></span>
-              <span className="terminal-btn yellow"></span>
-              <span className="terminal-btn green"></span>
+      {isOpen && createPortal(
+        <div className="terminal-modal-overlay" onClick={closeTerminal}>
+          <div className="terminal-container terminal-modal" onClick={(event) => event.stopPropagation()}>
+            <div className="terminal-header">
+              <div className="terminal-buttons">
+                <button
+                  type="button"
+                  className="terminal-btn red"
+                  aria-label="Close terminal"
+                  onClick={closeTerminal}
+                ></button>
+                <span className="terminal-btn yellow"></span>
+                <span className="terminal-btn green"></span>
+              </div>
+              <div className="terminal-title">{title}</div>
             </div>
-            <div className="terminal-title">{title}</div>
-          </div>
-          <div className="terminal-body" ref={outputRef}>
-            <div className="terminal-output">
-              {output.map((line, index) => (
-                <span key={index} className={line.className}>
-                  {line.text}
-                </span>
-              ))}
+            <div className="terminal-body" ref={outputRef}>
+              <div className="terminal-output">
+                {output.map((line, index) => (
+                  <span key={index} className={line.className}>
+                    {line.text}
+                  </span>
+                ))}
+              </div>
+              {isRunning && <div className="terminal-cursor"></div>}
             </div>
-            {isRunning && <div className="terminal-cursor"></div>}
           </div>
-        </div>
+        </div>,
+        document.body
       )}
     </>
   )

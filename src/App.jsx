@@ -11,7 +11,7 @@ import Footer from './components/Footer'
 
 function App() {
   useEffect(() => {
-    console.log('%c🎨 Portfolio v1.0 | Built with React', 'color: #3B82F6; font-size: 14px; font-weight: bold;')
+    console.log('%c🎨 Portfolio v1.0 | Built with React', 'color: #BF5700; font-size: 14px; font-weight: bold;')
     console.log('%cModern React architecture. Clean code.', 'color: #8b949e; font-size: 12px;')
   }, [])
 

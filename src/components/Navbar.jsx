@@ -20,7 +20,7 @@ function Navbar() {
   return (
     <nav id="navbar" className={scrolled ? 'scrolled' : ''}>
       <div className="nav-content">
-        <div className="nav-logo">AM</div>
+        <a href="#hero" className="nav-logo" onClick={handleLinkClick}>AM</a>
         <div className={`nav-links ${mobileMenuOpen ? 'active' : ''}`}>
           <a href="#about" onClick={handleLinkClick}>About</a>
           <a href="#experience" onClick={handleLinkClick}>Experience</a>
