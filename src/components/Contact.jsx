@@ -42,9 +42,7 @@ function Contact() {
         <h2 className="section-title">Let's Connect</h2>
         <div className="contact-content">
           <p className="contact-intro">
-            I'm currently seeking physical design engineering roles for Summer 2026. 
-            Feel free to reach out about opportunities, research collaboration, or just 
-            to chat about semiconductor design.
+            {profile.contactline}
           </p>
 
           {profile.resume?.url ? (

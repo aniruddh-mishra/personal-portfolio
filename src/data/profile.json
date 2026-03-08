@@ -5,12 +5,14 @@
   "label": "Electrical & Computer Engineering",
   "subtitle": "ECE Engineer × Researcher × Builder",
   "cyclingTaglines": [
-    "design silicon.",
-    "build embedded systems.",
+    "travel the world.",
+    "love to hike.",
+    "am an engineer.",
     "publish research.",
-    "automate STA flows.",
-    "tape out chips.",
-    "optimize power systems."
+    "build embedded systems.",
+    "solve hard problems.",
+    "give back to my community.",
+    "never stop learning."
   ],
   "about": {
     "paragraphs": [
@@ -68,5 +70,6 @@
     "linkedin": "https://linkedin.com/in/aniruddhmishra",
     "github": "https://github.com/aniruddh-mishra",
     "instagram": "https://instagram.com/_aniruddh_mishra_"
-  }
+  },
+  "contactline": "I'm an aspiring electrical engineer. Feel free to reach out about opportunities, research collaboration, or just to chat about my projects."
 }

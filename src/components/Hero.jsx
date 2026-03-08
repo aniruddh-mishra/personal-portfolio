@@ -3,20 +3,25 @@ import profile from '../data/profile.json'
 
 function Hero() {
   const [currentTagline, setCurrentTagline] = useState(0)
-  const [isTransitioning, setIsTransitioning] = useState(false)
+  const [typedText, setTypedText] = useState('')
 
   useEffect(() => {
-    const interval = setInterval(() => {
-      setIsTransitioning(true)
-      
-      setTimeout(() => {
-        setCurrentTagline((prev) => (prev + 1) % profile.cyclingTaglines.length)
-        setIsTransitioning(false)
-      }, 300)
-    }, 3000)
+    const fullText = profile.cyclingTaglines[currentTagline]
+    let timeout
 
-    return () => clearInterval(interval)
-  }, [])
+    if (typedText.length < fullText.length) {
+      timeout = setTimeout(() => {
+        setTypedText(fullText.slice(0, typedText.length + 1))
+      }, 50)
+    } else {
+      timeout = setTimeout(() => {
+        setTypedText('')
+        setCurrentTagline((prev) => (prev + 1) % profile.cyclingTaglines.length)
+      }, 1300)
+    }
+
+    return () => clearTimeout(timeout)
+  }, [typedText, currentTagline])
 
   return (
     <section id="hero">
@@ -26,16 +31,7 @@ function Hero() {
         <h1 className="hero-name">{profile.name}</h1>
         <div className="hero-tagline">
           <span className="tagline-prefix">I </span>
-          <span 
-            className="cycling-text"
-            style={{
-              opacity: isTransitioning ? 0 : 1,
-              transform: isTransitioning ? 'translateY(10px)' : 'translateY(0)',
-              transition: 'opacity 0.3s ease, transform 0.3s ease'
-            }}
-          >
-            {profile.cyclingTaglines[currentTagline]}
-          </span>
+          <span className="cycling-text">{typedText}</span>
         </div>
         <p className="hero-subtitle">{profile.subtitle}</p>
         <div className="hero-ctas">

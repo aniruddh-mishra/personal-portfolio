@@ -262,6 +262,15 @@ body::before {
     margin-bottom: 1rem;
     font-weight: 300;
     min-height: 3.5rem;
+    text-align: center;
+}
+
+.tagline-prefix {
+    color: var(--text-primary);
+    font-weight: 600;
+    font-style: normal;
+    letter-spacing: 0;
+    font-variant-ligatures: none;
 }
 
 .cycling-text {
