@@ -1,0 +1,53 @@
+[
+  {
+    "date": "Spring 2026",
+    "title": "Physical Design Intern",
+    "company": "Apple",
+    "description": "Designing automation flows for Static Timing Analysis (STA) infrastructure. Contributing to the tooling and methodology that ensures timing closure on Apple silicon — the same pipeline behind chips like the M-series and A-series."
+  },
+  {
+    "date": "June 2025 – August 2025",
+    "title": "Electrical Engineering Intern",
+    "company": "Lutron · Austin, TX",
+    "bullets": [
+      "Modified ColorTune system design enabling $210k/year in cost savings on D2 light sources",
+      "Analyzed PLL and LED current drive loop on custom ASIC to implement a low power consumption mode",
+      "Optimized lamp interference simulations using cross-correlation algorithms",
+      "Developed a PCB daughter board in Altium for programming and debugging light sources"
+    ]
+  },
+  {
+    "date": "Sept 2025 – Present",
+    "title": "Lab Assistant",
+    "company": "Quantum & Nonlinear Optoelectronics Group · UT Austin",
+    "description": "Designing a photothermal interferometry experiment to analyze long-wave infrared absorption of germanium."
+  },
+  {
+    "date": "June 2024 – May 2025",
+    "title": "Research Intern",
+    "company": "Los Alamos National Laboratory · Los Alamos, NM",
+    "bullets": [
+      "Designed equivalent DC network representations of electric transmission systems for PowerModelsGMD.jl",
+      "Authored and published paper in IEEE Journal: \"Sensitivity of DC Network Representation for GIC Analysis\"",
+      "Presented research at the Texas Power and Energy Conference"
+    ]
+  },
+  {
+    "date": "August 2024 – August 2025",
+    "title": "Electrical Engineering Teaching Assistant",
+    "company": "The University of Texas at Austin",
+    "bullets": [
+      "Redesigned and modernized all lab experiments with supporting video content",
+      "Mentored students through 10+ projects including KiCad-designed buck converters"
+    ]
+  },
+  {
+    "date": "July 2023 – August 2023",
+    "title": "Research Intern",
+    "company": "Institute for Computing in Research · Austin, TX",
+    "bullets": [
+      "Built a predictive agent-based model to analyze zoning policy effects on traffic demand in cities",
+      "Wrote a LaTeX research paper on traffic network generation for MATSIM with Dr. Barnes (Los Alamos)"
+    ]
+  }
+]

@@ -1,0 +1,47 @@
+{
+  "name": "Aniruddh Mishra",
+  "email": "aniruddh@utexas.edu",
+  "location": "Austin, Texas",
+  "tagline": "ECE Engineer × Researcher × Builder",
+  "label": "Electrical & Computer Engineering",
+  "subtitle": "ECE Engineer × Researcher × Builder",
+  "cyclingTaglines": [
+    "design silicon.",
+    "build embedded systems.",
+    "publish research.",
+    "automate STA flows.",
+    "tape out chips.",
+    "optimize power systems."
+  ],
+  "about": {
+    "paragraphs": [
+      "I'm an Electrical and Computer Engineering (Honors) student at UT Austin, simultaneously completing a BBA through the Canfield Business Honors Program. I love doing hands-on research, industry internships, and hardware/software projects spanning VLSI, embedded systems, and power systems.",
+      "Currently interning at Apple on Physical Design, where I'm designing automation flows for Static Timing Analysis infrastructure.",
+      "When I'm not designing circuits or writing code, you'll find me running around Austin's trails or exploring the city's coffee scene."
+    ]
+  },
+  "education": [
+    {
+      "degree": "B.S. Electrical & Computer Engineering (Honors)",
+      "school": "The University of Texas at Austin",
+      "date": "May 2027",
+      "gpa": "4.00"
+    },
+    {
+      "degree": "B.B.A. — Canfield Business Honors Program",
+      "school": "McCombs School of Business",
+      "date": "May 2027",
+      "gpa": "4.00"
+    }
+  ],
+  "honors": [
+    "Distinguished College Scholar — Cockrell School of Engineering & McCombs (2025)",
+    "Victor L. Hand Endowed Scholar (2024)",
+    "Congressional App Challenge — 2nd Place (2022)"
+  ],
+  "social": {
+    "linkedin": "https://linkedin.com/in/aniruddhmishra",
+    "github": "https://github.com/aniruddh-mishra",
+    "instagram": "https://instagram.com/_aniruddh_mishra_"
+  }
+}

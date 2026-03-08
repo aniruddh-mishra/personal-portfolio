@@ -1,0 +1,46 @@
+[
+  {
+    "icon": "💾",
+    "title": "CMOS Memory Cell — VLSI Physical Design",
+    "date": "September 2025",
+    "description": "Engineered a CMOS 4-bit memory cell in Cadence Virtuoso (schematic + custom layout), achieving top-ranked area efficiency in class. Ran DRC/LVS and validated timing with Spectre and HSPICE.",
+    "tags": ["Cadence Virtuoso", "HSPICE", "DRC/LVS"],
+    "hasTerminal": false
+  },
+  {
+    "icon": "🌐",
+    "title": "Ethernet Network Switch — VLSI Physical Design",
+    "description": "Designed a fully functional Ethernet network switch in Verilog with MAC address learning and multi-port packet forwarding logic. Took the design through the full VLSI flow — synthesis, place & route, and physical verification — producing a final GDSII chip layout output.",
+    "tags": ["Verilog", "VLSI", "GDSII"],
+    "github": "https://github.com/aniruddh-mishra/Ethernet_Network_Switch",
+    "hasTerminal": true,
+    "terminalId": "ethernet"
+  },
+  {
+    "icon": "⚙️",
+    "title": "ARM-Based ISA RTL Implementation",
+    "date": "August 2025 – Present",
+    "description": "Implementing the LC-3b ISA in Verilog for FPGA with out-of-order pipelined execution and virtually indexed cache. Debugging via Basys3 seven-segment display and switches.",
+    "tags": ["Verilog", "FPGA", "Basys3"],
+    "github": "https://github.com/aniruddh-mishra",
+    "hasTerminal": false
+  },
+  {
+    "icon": "🚗",
+    "title": "Longhorn Racing Solar — Embedded Systems Engineer",
+    "date": "September 2023 – August 2025",
+    "description": "Designed voltage, temperature, and hall-effect current monitoring PCBs for a battery protection system in KiCad. Migrated to a system-on-module interrupt-based architecture.",
+    "tags": ["KiCad", "Embedded Systems", "PCB Design"],
+    "hasTerminal": false
+  },
+  {
+    "icon": "🏙️",
+    "title": "Synthetic Traffic Generation",
+    "date": "2023",
+    "description": "Agent-based model generating synthetic city populations and road networks in MATSIM format based on configurable zoning parameters.",
+    "tags": ["Python", "MATSIM", "Network Generation"],
+    "github": "https://github.com/aniruddh-mishra/synthetic-traffic-generation",
+    "hasTerminal": true,
+    "terminalId": "traffic"
+  }
+]

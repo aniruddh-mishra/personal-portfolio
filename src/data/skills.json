@@ -1,0 +1,30 @@
+[
+  {
+    "title": "EDA & Circuit Design",
+    "skills": [
+      "Cadence Virtuoso",
+      "Cadence Innovus",
+      "Synopsys PrimeTime",
+      "Spectre",
+      "HSPICE",
+      "LTSpice",
+      "Altium"
+    ]
+  },
+  {
+    "title": "Digital Design",
+    "skills": ["Verilog", "FPGA (AMD Artix 7)", "Static Timing Analysis", "Vivado"]
+  },
+  {
+    "title": "Power Systems",
+    "skills": ["PowerWorld Simulator", "PowerModels (Julia)"]
+  },
+  {
+    "title": "Programming",
+    "skills": ["C", "C++", "ARM Assembly", "Python", "Julia", "LaTeX", "Linux"]
+  },
+  {
+    "title": "Languages",
+    "skills": ["Tamil (Fluent)", "Hindi (Fluent)", "Spanish (Basic)"]
+  }
+]
