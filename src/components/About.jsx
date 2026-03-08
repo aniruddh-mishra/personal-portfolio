@@ -4,7 +4,8 @@ import { createPortal } from 'react-dom'
 
 function About() {
   const [photoHighlights, setPhotoHighlights] = useState([])
-  const [selectedPhoto, setSelectedPhoto] = useState(null)
+  const [selectedPhotoIndex, setSelectedPhotoIndex] = useState(null)
+  const [selectedPhotoSource, setSelectedPhotoSource] = useState('highlights')
   const carouselRef = useRef(null)
 
   useEffect(() => {
@@ -37,26 +38,6 @@ function About() {
     }
   }
 
-  const openPhoto = (photo) => {
-    setSelectedPhoto(photo)
-    document.body.style.overflow = 'hidden'
-  }
-
-  const closePhoto = () => {
-    setSelectedPhoto(null)
-    document.body.style.overflow = ''
-  }
-
-  useEffect(() => {
-    const handleEsc = (e) => {
-      if (e.key === 'Escape' && selectedPhoto) {
-        closePhoto()
-      }
-    }
-    window.addEventListener('keydown', handleEsc)
-    return () => window.removeEventListener('keydown', handleEsc)
-  }, [selectedPhoto])
-
   const photoSlots = profile.photos?.gallery?.length
     ? profile.photos.gallery
     : [
@@ -65,6 +46,56 @@ function About() {
         { src: '', alt: 'Campus photo' },
         { src: '', alt: 'Coffee/lifestyle photo' }
       ]
+
+  const galleryPhotos = photoSlots.reduce((acc, photo, originalIndex) => {
+    if (photo.src) {
+      acc.push({ ...photo, originalIndex })
+    }
+    return acc
+  }, [])
+
+  const activePhotos = selectedPhotoSource === 'gallery' ? galleryPhotos : photoHighlights
+
+  const openPhoto = (index, source = 'highlights') => {
+    setSelectedPhotoSource(source)
+    setSelectedPhotoIndex(index)
+    document.body.style.overflow = 'hidden'
+  }
+
+  const closePhoto = () => {
+    setSelectedPhotoIndex(null)
+    document.body.style.overflow = ''
+  }
+
+  const showNextPhoto = () => {
+    if (!activePhotos.length) return
+    setSelectedPhotoIndex((prev) => (prev === null ? 0 : (prev + 1) % activePhotos.length))
+  }
+
+  const showPreviousPhoto = () => {
+    if (!activePhotos.length) return
+    setSelectedPhotoIndex((prev) => (prev === null ? 0 : (prev - 1 + activePhotos.length) % activePhotos.length))
+  }
+
+  useEffect(() => {
+    const handleEsc = (e) => {
+      if (e.key === 'Escape' && selectedPhotoIndex !== null) {
+        closePhoto()
+      }
+
+      if (e.key === 'ArrowRight' && selectedPhotoIndex !== null) {
+        showNextPhoto()
+      }
+
+      if (e.key === 'ArrowLeft' && selectedPhotoIndex !== null) {
+        showPreviousPhoto()
+      }
+    }
+    window.addEventListener('keydown', handleEsc)
+    return () => window.removeEventListener('keydown', handleEsc)
+  }, [selectedPhotoIndex, activePhotos.length])
+
+  const selectedPhoto = selectedPhotoIndex !== null ? activePhotos[selectedPhotoIndex] : null
 
   return (
     <section id="about" className="section">
@@ -94,7 +125,17 @@ function About() {
         <div className="about-row about-row--center">
           <div className="about-gallery">
             {photoSlots.map((photo, index) => (
-              <figure key={index} className="about-photo-slot">
+              <figure
+                key={index}
+                className={`about-photo-slot ${photo.src ? 'about-photo-slot--interactive' : ''}`}
+                onClick={() => {
+                  if (!photo.src) return
+                  const galleryIndex = galleryPhotos.findIndex((item) => item.originalIndex === index)
+                  if (galleryIndex >= 0) {
+                    openPhoto(galleryIndex, 'gallery')
+                  }
+                }}
+              >
                 {photo.src ? (
                   <img src={photo.src} alt={photo.alt || `Photo ${index + 1}`} />
                 ) : (
@@ -148,7 +189,7 @@ function About() {
                 <div 
                   key={index} 
                   className="about-photo-highlight"
-                  onClick={() => openPhoto(photo)}
+                  onClick={() => openPhoto(index)}
                 >
                   <img 
                     src={photo.src} 
@@ -176,12 +217,41 @@ function About() {
           <button className="lightbox-close" onClick={closePhoto} aria-label="Close">
             ✕
           </button>
+          {activePhotos.length > 1 && (
+            <>
+              <button
+                className="lightbox-nav lightbox-nav-prev"
+                onClick={(e) => {
+                  e.stopPropagation()
+                  showPreviousPhoto()
+                }}
+                aria-label="Previous photo"
+              >
+                ←
+              </button>
+              <button
+                className="lightbox-nav lightbox-nav-next"
+                onClick={(e) => {
+                  e.stopPropagation()
+                  showNextPhoto()
+                }}
+                aria-label="Next photo"
+              >
+                →
+              </button>
+            </>
+          )}
           <div className="lightbox-content" onClick={(e) => e.stopPropagation()}>
             <img 
               src={selectedPhoto.src} 
               alt={selectedPhoto.alt}
               className="lightbox-image"
             />
+            {activePhotos.length > 1 && (
+              <div className="lightbox-counter">
+                {selectedPhotoIndex + 1} / {activePhotos.length}
+              </div>
+            )}
           </div>
         </div>,
         document.body
