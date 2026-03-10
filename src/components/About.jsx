@@ -104,7 +104,7 @@ function About() {
         <h2 className="section-title">Building at the intersection of hardware and software</h2>
         
         {/* First row: Text and Profile Photo */}
-        <div className="about-row about-row--center">
+        <div className="about-row about-row--center about-row--intro">
           <div className="about-text">
             {profile.about.paragraphs.map((paragraph, index) => (
               <p key={index}>{paragraph}</p>
@@ -122,7 +122,7 @@ function About() {
         </div>
 
         {/* Second row: Gallery and Education (reversed order) */}
-        <div className="about-row about-row--center">
+        <div className="about-row about-row--center about-row--details">
           <div className="about-gallery">
             {photoSlots.map((photo, index) => (
               <figure
