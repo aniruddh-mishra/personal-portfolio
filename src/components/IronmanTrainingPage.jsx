@@ -279,11 +279,74 @@ const ironmanTrainingHtml = `<!DOCTYPE html>
 
   @media (max-width: 680px) {
     .grid-2, .grid-3 { grid-template-columns: 1fr; }
-    .hero { flex-direction: column; }
-    .hero-stats { flex-wrap: wrap; gap: 16px; }
-    .week-grid { grid-template-columns: repeat(7, 1fr); }
-    .day-block { padding: 4px 2px; min-height: 48px; font-size: 10px; }
-    .day-block .icon { font-size: 13px; }
+    .hero {
+      flex-direction: column;
+      align-items: flex-start;
+      padding: 20px 16px;
+    }
+    .hero-left h1 { font-size: 34px; }
+    .hero-stats {
+      width: 100%;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      gap: 12px;
+    }
+    .stat-box { min-width: calc(50% - 6px); }
+    .stat-num { font-size: 24px; }
+    .card { padding: 16px; }
+    .commute-banner {
+      flex-direction: column;
+      align-items: flex-start;
+      padding: 14px 16px;
+      gap: 10px;
+    }
+    .week-grid {
+      display: flex;
+      gap: 10px;
+      overflow-x: auto;
+      padding-bottom: 8px;
+      scroll-snap-type: x mandatory;
+      -webkit-overflow-scrolling: touch;
+    }
+    .day-col {
+      flex: 0 0 132px;
+      min-width: 132px;
+      scroll-snap-align: start;
+    }
+    .day-block {
+      padding: 10px 8px;
+      min-height: 92px;
+      font-size: 10px;
+    }
+    .day-block .icon { font-size: 14px; }
+    .day-block .label { font-size: 10px; }
+    .day-block .sub { font-size: 9px; }
+    .flag-row {
+      flex-wrap: wrap;
+      align-items: flex-start;
+      gap: 6px 10px;
+    }
+    .flag-name { min-width: 0; width: 100%; }
+    .flag-note { flex: 1 0 100%; }
+    .nav {
+      padding: 0 10px;
+      gap: 10px;
+      align-items: flex-start;
+      flex-wrap: wrap;
+    }
+    .nav-logo { padding: 12px 0 0; }
+    .nav-tabs {
+      width: 100%;
+      padding-bottom: 8px;
+      gap: 6px;
+      overflow-x: auto;
+      -webkit-overflow-scrolling: touch;
+    }
+    .tab-btn {
+      padding: 12px 10px;
+      font-size: 12px;
+      flex: 0 0 auto;
+    }
     main { padding: 16px 12px; }
     nav { padding: 0 12px; }
   }
