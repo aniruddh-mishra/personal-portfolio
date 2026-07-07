@@ -44,15 +44,15 @@
     "hero": "/profile_photo.jpg",
     "gallery": [
       {
-        "src": "/half_marathon.heic",
+        "src": "/half_marathon.jpg",
         "alt": "Austin Half Marathon"
       },
       {
-        "src": "/san_francisco.heic",
+        "src": "/san_francisco.jpg",
         "alt": "San Francisco"
       },
       {
-        "src": "/running.heic",
+        "src": "/running.jpg",
         "alt": "Running in San Francisco"
       },
       {

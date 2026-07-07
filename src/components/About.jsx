@@ -12,7 +12,7 @@ function About() {
     // Dynamically import all images from src/assets/photography
     const loadPhotos = async () => {
       try {
-        const photoModules = import.meta.glob('../assets/photography/*.{jpg,jpeg,png,gif,webp,heic,JPG,JPEG,PNG,GIF,WEBP,HEIC}', { eager: true, query: '?url', import: 'default' })
+        const photoModules = import.meta.glob('../assets/photography/*.{jpg,jpeg,png,gif,webp,JPG,JPEG,PNG,GIF,WEBP}', { eager: true, query: '?url', import: 'default' })
         const photoUrls = Object.entries(photoModules).map(([path, url]) => {
           const filename = path.split('/').pop()
           return {
